@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="/css/site.css">
+    <script src="/js/jquery-3.4.1.min.js"></script>
+    <script src="/js/jquery.validate.min.js"></script>
+
+    <style>
+        label.error {
+            color: #F00;
+            font-weight: bold;
+        }
+
+        input.error,
+        select.error,
+        textarea.error {
+            border: 1px red solid;
+        }
+    </style>
+
+    <script>
+
+        $(document).ready(function () {
+            /*
+                        $('#signup').submit(function () {
+                            if ($('#username').val() == '') {
+                                alert('Please supply a name in the Name field.');
+                                return false;
+                            }
+                        }); // end submit()
+            
+                        $('#username').focus(function () {
+                            var field = $(this);
+                            if (field.val() == field.prop('defaultValue')) {
+                                field.val('');
+                            }
+                        });
+            
+                        $('#username').blur(function (e) {
+                            e.preventDefault();
+                        });
+            
+                        $('#heliskiing').focus();
+            */
+            //  $(':input').prop('disabled', true);
+
+
+            $('#signup').validate({
+
+                rules: {
+
+                    username: {
+                        minlength: 30,
+                        required: true
+                    }
+                },
+
+                messages: {
+                    username: {
+                        required: "Please type the password you'd like to use.",
+                        minlength: "Your password must be between 8 and 16 characters long."
+                    }
+                }
+
+
+
+
+
+            });
+
+
+
+        });
+
+    </script>
+
+
+
+</head>
+
+<body>
+    <br><br>
+    <form action="process.php" method="post" name="signup" id="signup">
+        <div>
+            <label for="username" class="label">Name</label>
+            <input class="error" name="username" type="text" id="username" size="36" value="type your name here">
+        </div>
+        <br>
+        <div><span class="label">Hobbies</span>
+            <input type="checkbox" name="hobby" id="heliskiing" value="helisking">
+            <label for="heliskiing">Heli-skiing</label>
+            <input type="checkbox" name="hobby" id="pickle" value="pickle">
+            <label for="pickle">Pickle eating</label>
+            <input type="checkbox" name="hobby" id="walnut" value="walnut">
+            <label for="walnut">Making walnut butter</label>
+        </div>
+        <div>
+            <label for="planet" class="label">Planet of Birth</label>
+            <select name="planet" id="planet">
+                <option>Earth</option>
+                <option>Mars</option>
+                <option>Alpha Centauri</option>
+                <option>You've never heard of it</option>
+            </select>
+        </div>
+        <div class="labelBlock">Would you like to receive annoying e-mail from us?
+        </div>
+        <div class="indent">
+            <input type="radio" name="spam" id="yes" value="yes" checked="checked">
+            <label for="yes">Yes</label>
+            <input type="radio" name="spam" id="definitely" value="definitely">
+            <label for="definitely">Definitely</label>
+            <input type="radio" name="spam" id="choice" value="choice">
+            <label for="choice">Do I have a choice?</label>
+        </div>
+        <div>
+            <input type="submit" name="submit" id="submit" value="Submit">
+        </div>
+    </form>
+
+
+</body>
+
+</html>
