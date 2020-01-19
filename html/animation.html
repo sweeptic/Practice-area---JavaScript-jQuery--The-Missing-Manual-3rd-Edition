@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="/js/jquery-3.4.1.min.js"></script>
+    <script src="/js/jquery-ui.min.js"></script>
+
+    <script>
+
+        $(document).ready(function () {
+
+
+            $("button").click(function () {
+                $("div")
+                .animate(
+                    {width: '400px',height: '400px' }
+                    ,500, function() {
+                        $('div').fadeOut(1000).fadeIn(1000);
+
+                    } );
+            });
+
+
+        });
+
+
+    </script>
+
+</head>
+
+<body>
+
+    <button>start animation</button>
+
+
+    <div id="message"
+        style="position: relative; font-size: 30px; display: block; width: 200px; border: 1px solid black; margin: 50px;">
+        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Beatae, harum.
+    </div>
+
+    <div style="background:#98bf21;height:100px;width:100px;position:absolute;"></div>
+
+
+</body>
+
+
+</html>

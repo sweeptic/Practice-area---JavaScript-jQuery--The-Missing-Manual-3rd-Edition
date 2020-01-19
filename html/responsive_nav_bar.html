@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+
+    <link rel=" stylesheet" href="/smartmenus-1.1.0/sm-blue.css">
+    <link rel="stylesheet" href="/smartmenus-1.1.0/sm-core-css.css">
+    <script src="/js/jquery-3.4.1.min.js"></script>
+    <script src="/plugins/smartmenus-1.1.0/smartmenus-1.1.0/jquery.smartmenus.min.js"></script>
+    <script>
+        $(document).ready(function () {
+
+            $('.sm').smartmenus({
+                showFunction: function ($ul, complete) {
+                    $ul.slideDown(250, complete);
+                }
+
+                ,
+                hideFunction: function ($ul, complete) {
+                    $ul.slideUp(250, complete);
+                }
+
+            }); // end smartmenus
+
+
+        });
+
+    </script>
+
+</head>
+
+<body>
+
+    <div class="content">
+        <div class="main">
+            <h1>Navigation Menu</h1>
+
+            <ul class="sm sm-blue">
+                <li><a href="#">Home</a></li>
+                <li><a href="#">About Us </a>
+                    <ul>
+                        <li><a href="#">Our History</a></li>
+                        <li><a href="#">Driving Directions</a></li>
+                        <li><a href="#">Hours</a></li>
+                    </ul>
+                </li>
+                <li><a href="#">Our Products </a>
+                    <ul>
+                        <li><a href="#">Gizmos </a>
+                            <ul>
+                                <li><a href="#">Gizmo Basic</a></li>
+                                <li><a href="#">Gizmo Standard</a></li>
+                                <li><a href="#">Gizmo Supreme</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="#">Gadgets </a>
+                            <ul>
+                                <li><a href="#">Gadget Basic</a></li>
+                                <li><a href="#">Gadget Standard</a></li>
+                                <li><a href="#">Gadget Supreme</a>
+                                    <ul>
+                                        <li><a href="#">Gadget Supreme A</a></li>
+                                        <li><a href="#">Gadget Supreme B</a></li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </li>
+                        <li><a href="#">Time Machines</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+</body>
+
+</html>
