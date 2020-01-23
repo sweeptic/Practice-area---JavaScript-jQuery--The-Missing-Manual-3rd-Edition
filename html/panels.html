@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <link href="../_css/jquery-ui.min.css" rel="stylesheet">
+    <link href="../_css/site.css" rel="stylesheet">
+
+    <script src="../_js/jquery.min.js"></script>
+    <script src="../_js/jquery-ui.min.js"></script>
+
+    <title>Document</title>
+
+    <style>
+
+    </style>
+
+
+    <script>
+        $(document).ready(function () {
+
+            $('#tabContainer').tabs({
+                show: 'fadeIn',
+                hide: 'fadeOut'
+            })
+
+
+            var hash = location.hash;
+            if (hash) {
+                $('#tabContainer').tabs('load', hash)
+            }
+
+
+        });
+
+    </script>
+
+
+</head>
+
+<body>
+    <div id="tabContainer">
+        <ul>
+            <li><a href="panel1.html">Tab 1</a></li>
+            <li><a href="panel2.html">Tab 2</a></li>
+            <li><a href="panel3.html">Tab 3</a></li>
+        </ul>
+   <!-- panel 1 
+        <div id="panel1">
+            <h2><img src="images/robot.jpg" style="float:right" height="150" alt="robot">Content for panel 1</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et
+                dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
+                ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
+                fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia
+                deserunt mollit anim id est laborum.</p>
+        </div>
+    
+        <div id="panel2">
+            <h2>Content for panel 2</h2>
+            <p>You can put any kind of HTML in a panel</p>
+            <ul>
+                <li>Like lists...</li>
+                <li>Headlines...</li>
+                <li>Images...</li>
+                <li>And More...</li>
+            </ul>
+        </div>
+    
+        <div id="panel3">
+            <h2>Content for panel 3</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et
+                dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
+                ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
+                fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia
+                deserunt mollit anim id est laborum.</p>
+        </div>-->
+    </div>
+
+
+
+</body>
+
+</html>

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="/js/jquery-3.4.1.min.js"></script>
+    <link rel="stylesheet" href="/css/site.css">
+    <title>Document</title>
+    <script>
+
+        $(document).ready(function () {
+
+            $('#login').submit(function (e) {
+                var formData = $(this).serialize();
+                $.get('login.php', formData, processData);
+                e.preventDefault();
+            });
+
+            function processData(data) {
+                if (data === 'pass') {
+                    $('#formwrapper')
+                        .prepend('<p id="fail">ok</p>');
+                } else {
+                    $('#formwrapper')
+                        .prepend('<p id="fail">Incorrect login information. Please try again</p>');
+                }
+            }
+
+        });
+
+    </script>
+</head>
+
+<body>
+    <br><br><br>
+    <div class="wrapper">
+        <header>
+            JAVASCRIPT <span class="amp">&amp;</span> jQUERY: THE&nbsp;MISSING&nbsp;MANUAL
+        </header>
+        <div class="content">
+            <div class="main">
+                <h1>Login</h1>
+                <div id="formwrapper">
+                    <form method="get" action="login.php" id="login">
+                        <p>
+                            <label for="username">Username:</label>
+                            <input type="text" name="username" id="username">
+                        </p>
+                        <p>
+                            <label for="password">Password: </label>
+                            <input type="password" name="password" id="password">
+                        </p>
+                        <p>
+                            <input type="submit" name="button" id="button" value="Submit">
+                        </p>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <footer>
+            <p>JavaScript &amp; jQuery: The Missing Manual, 3rd Edition, by <a href="http://sawmac.com/">David
+                    McFarland</a>. Published by <a href="http://oreilly.com/">O'Reilly Media, Inc</a>.</p>
+        </footer>
+    </div>
+
+</body>
+
+</html>

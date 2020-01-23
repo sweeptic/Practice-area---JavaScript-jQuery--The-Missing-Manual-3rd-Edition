@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="/js/jquery-3.4.1.min.js"></script>
+    <script src="/jquery-ui-1.12.1.custom/jquery-ui.min.js"></script>
+    <link rel="stylesheet" href="/jquery-ui-1.12.1.custom/jquery-ui.theme.min.css">
+
+    <title>Document</title>
+
+    <style>
+        #login {
+            font-size: 2em;
+            margin: 50px;
+        }
+
+        body {
+            background-image: url('/images/large/slide1.jpg');
+        }
+
+        #hello {
+            border: 1px solid black;
+            width: 100px;
+            text-align: center;
+        }
+    </style>
+
+
+    <script>
+        $(document).ready(function () {
+            $('#hello').dialog({
+                height: 400,
+                modal: true,
+                hide: 'drop',
+                autoOpen: false,
+                buttons: {
+                    "Confirm": function () {
+                        $(this).dialog('close');
+                    },
+                    "Cancel": function () {
+                        // code executed when "Cancel" button is clicked
+                    }
+                } // end buttons
+            });
+
+            $('#login').click(function (e) {
+                e.preventDefault();
+                $('#hello').dialog('open');
+            });
+
+
+        });
+    </script>
+
+
+    <script id="contactInfo" type="text/template">
+    <p>You can reach us at 555-555-5555</p>
+    <p><img src="images/map.png" title="I am a map!"></p>
+    </script>
+
+
+</head>
+
+<body>
+
+    <div id="hello" title="Hello world!">
+        <p>dialog box</p>
+        <p>try dragging</p>
+    </div>
+
+    <div>
+        <button id="login">Login</button>
+    </div>
+
+
+
+
+</body>
+
+</html>
